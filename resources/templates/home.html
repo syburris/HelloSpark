@@ -1,10 +1,30 @@
 <html>
-<header>
-        Bonjour!!!
-</header>
+<head>
+    <title>Bonjour!!!!</title>
+</head>
 <br><br>
 <body>
-    Hello, {{name}}!<br>
+    {{#name}}
+    Hello, {{name}}!
+    <form action="/logout" method="post">
+        <button type="submit">Log Out</button>
+    </form>
+    {{/name}}
+
+    {{^name}}
+    Hello!<br>
     <a href="/login">Login</a>
+    {{/name}}
+<br><br>
+
+Past users:<br>
+    <ul>
+        {{#pastUsers}}
+        <li>{{name}}</li>
+        {{/pastUsers}}
+    </ul>
+
+
+
 </body>
 </html>
